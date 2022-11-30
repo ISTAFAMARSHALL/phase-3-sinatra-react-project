@@ -8,12 +8,12 @@ class ApplicationController < Sinatra::Base
 
   get "/genres" do
     genres = Genre.all
-    genres.to_json(include: :games)
+    genres.to_json
   end
 
   get "/games" do
     games = Game.all
-    games.to_json(include: :genre)
+    games.to_json
   end
 
   get '/genres/:id' do
