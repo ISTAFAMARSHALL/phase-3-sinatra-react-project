@@ -8,12 +8,12 @@ class ApplicationController < Sinatra::Base
 
   get "/genres" do
     genres = Genre.all
-    genres.to_json
+    genres.to_json(include: :games)
   end
 
   get "/games" do
     games = Game.all
-    games.to_json
+    games.to_json(include: :genre)
   end
 
   get '/genres/:id' do
@@ -28,12 +28,12 @@ class ApplicationController < Sinatra::Base
 
   post "/genres" do
     new_genre = Genre.create(name: params[:name])
-    new_genre.to_json
+    new_genre.to_json(include: :games)
   end
 
   post "/games" do
     new_game = Game.create(name: params[:name], genre_id: params[:genre_id], score: params[:score], completion_percentage: params[:completion_percentage], platinum: params[:platinum], comment: params[:comment])
-    new_game.to_json
+    new_game.to_json(include: :genre)
   end
 
   patch '/genres/:id' do
