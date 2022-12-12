@@ -13,7 +13,7 @@ Enjoy using this app to track completion percentage, rate games, and leave comme
 This project was bootstrapped with [Create React App] and meant to be used with a database
 
 1. Fork and Clone repo of database from provided
-   link: https://github.com/ISTAFAMARSHALL/phase-3-sinatra-react-project 
+   link: https://github.com/ISTAFAMARSHALL/phase-3-sinatra-react-project
 
 2. Open project directory
 
