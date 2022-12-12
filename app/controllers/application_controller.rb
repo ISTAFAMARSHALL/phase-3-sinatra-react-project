@@ -45,7 +45,7 @@ class ApplicationController < Sinatra::Base
   patch '/games/:id' do
     updated_games = Game.find(params[:id])
     updated_games.update(name: params[:name], genre_id: params[:genre_id], score: params[:score], completion_percentage: params[:completion_percentage], platinum: params[:platinum], comment: params[:comment])
-    updated_games.to_json
+    updated_games.to_json(include: :genre)
   end
 
   delete '/genres/:id' do
